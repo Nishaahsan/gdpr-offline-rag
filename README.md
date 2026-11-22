@@ -21,17 +21,8 @@ Ask questions about the EU General Data Protection Regulation (GDPR) and get ans
 
 ## How it works
 
-```mermaid
-flowchart LR
-  A[GDPR text] --> B[Article-aware chunking]
-  B --> C[nomic-embed-text embeddings]
-  C --> D[(ChromaDB)]
-  Q[Question] --> E[Embed question]
-  E --> F[Top-k search]
-  D --> F
-  F --> G[Llama 3.2 3B via Ollama]
-  G --> H[Answer with Art. citations]
-```
+<img width="1600" height="566" alt="image" src="https://github.com/user-attachments/assets/5d37ddc1-4d2c-419d-8b34-9aa8324efbaa" />
+
 
 1. **Ingest:** `ingest.py` splits the text per article, embeds each chunk, and stores it in ChromaDB.
 2. **Retrieve:** the question is embedded and the closest chunks are fetched.
